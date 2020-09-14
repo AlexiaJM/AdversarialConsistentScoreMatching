@@ -1,6 +1,6 @@
 # Adversarial score matching and improved sampling for image generation
 
-This repo contains the official implementation for the paper [Adversarial score matching and improved sampling for image generation](http://arxiv.org/abs/xxxx). It it a highly extended version of [the original repo on score matching](https://github.com/ermongroup/ncsnv2).
+This repo contains the official implementation for the paper [Adversarial score matching and improved sampling for image generation](https://arxiv.org/abs/2009.05475). It it a highly extended version of [the original repo on score matching](https://github.com/ermongroup/ncsnv2).
 
 Discussion and more samples at https://ajolicoeur.wordpress.com/adversarial-score-matching-and-consistent-sampling.
 
