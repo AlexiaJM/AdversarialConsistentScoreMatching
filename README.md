@@ -29,6 +29,8 @@ If you find this code useful please cite us in your work:
 
 * see requirements.txt (or do 'pip install numpy==1.16.0 lmdb torch torchvision jupyter matplotlib scipy tensorflow_gpu==2.1.0 tqdm PyYAML tensorboardX seaborn pillow setuptools==41.6.0 opencv-python')
 * set your default directories in main.py and tests/training_sampling_fid.sh properly
+* To use our pre-trained score betworks, download them (https://www.dropbox.com/s/dltiobdlsb2vhyo/DSM_ScoreNetwork_Pretrained.zip?dl=0) and unzip to /exp
+* To calculate the FID, download the FID statistics (https://www.dropbox.com/s/nhvp2tf1unxj08g/fid_stats.zip?dl=0) and unzip to /exp/datasets
 
 **Hyperparameter choice**
 
