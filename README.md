@@ -39,29 +39,34 @@ If you find this code useful please cite us in your work:
 
 ## To Replicate paper
 
-* For images: run tests/training_sampling_fid.sh (Important: You should run each step separately, so save results and load them back as needed)
-* For synthetic experiments: run the google colab xxxxxx
+* For images: run [tests/training_sampling_fid.sh](https://github.com/AlexiaJM/AdversarialConsistentScoreMatching/blob/master/tests/training_sampling_fid.sh) (Important: You should run each step separately, so save results and load them back as needed)
+* For synthetic experiments: run the [google colab](https://github.com/AlexiaJM/AdversarialConsistentScoreMatching/blob/master/Clean_Basic_code_GAN_with_DSM.ipynb)
 
-## To train score networks
+## To train a non-adversarial score network
 
 ```bash
-python main.py --config cifar10_9999ema.yml --doc MyNewAwesomeModel --ni
+python main.py --config cifar10_9999ema.yml --doc cifar10_bs128_L2_9999ema --ni
 ```
-Log files will be saved in `<exp>/logs/MyNewAwesomeModel`.
+Log files will be saved in `<exp>/logs/cifar10_bs128_L2_9999ema`.
 
-### To sample from a pre-trained score network
+## To train an adversarial score network
 
 ```bash
-python main.py --sample --config cifar10_9999ema.yml -i MyNewAwesomeModel --ni --consistent --nsigma 1 --step_lr 1.8e-5 --batch_size 100 --begin_ckpt 150000
+python main.py --config cifar10_9999ema.yml --doc cifar10_bs128_L2_9999ema_adam0_9_adamD-5_9_LSGAN_ --ni  --adam --adam_beta 0 .9 --D_adam --D_adam_beta -.5 .9 --adversarial
 ```
-Samples will be saved in `<exp>/image_samples/MyNewAwesomeModel`.
+Log files will be saved in `<exp>/logs/cifar10_bs128_L2_9999ema_adam0_9_adamD-5_9_LSGAN_`.
 
-### To compute the FID for a range of checkpoints from a pre-trained score network
-
-We can specify `begin_ckpt` and `end_ckpt` under the `fast_fid` group in the configuration file. For example, by running the following command, we can generate a small number of samples per checkpoint within the range `begin_ckpt`-`end_ckpt` for a FID evaluation.
+### To sample from a pre-trained score network (ex: cifar10_bs128_L2_9999ema, consistent, nsigma=1)
 
 ```bash
-python main.py --fast_fid --config cifar10_9999ema.yml -i MyNewAwesomeModel --ni --consistent --nsigma 1 --step_lr 1.8e-5 --batch_size 100 --begin_ckpt 100000 --end_ckpt 300000
+python main.py --sample --config cifar10_9999ema.yml -i cifar10_bs128_L2_9999ema --ni --consistent --nsigma 1 --step_lr 5.6e-6 --batch_size 100 --begin_ckpt 250000
+```
+Samples will be saved in `<exp>/image_samples/cifar10_bs128_L2_9999ema`.
+
+### To compute the FID for a range of checkpoints from a pre-trained score network (ex: cifar10_bs128_L2_9999ema, at 100k to 300k iterations)
+
+```bash
+python main.py --fast_fid --config cifar10_9999ema.yml -i cifar10_bs128_L2_9999ema --ni --consistent --nsigma 1 --step_lr 5.6e-6 --batch_size 4000 --fid_num_samples 10000 --begin_ckpt 100000 --end_ckpt 300000
 ```
 FIDs will be saved in `{args.fid_folder}/log_FID.txt`.
 
