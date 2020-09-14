@@ -50,6 +50,7 @@ def parse_args_and_config():
     parser.add_argument('--adam_beta', nargs=2, type=float, default=(0.9, 0.999))
     parser.add_argument('--D_adam', action='store_true', help='If True, uses D_adam_beta with Discriminator instead of the ones in config')
     parser.add_argument('--D_adam_beta', nargs=2, type=float, default=(0.9, 0.999))
+    parser.add_argument('--D_steps', type=int, default=0, help='Number of discriminator per score network steps')
 
     # Adversarial option
     parser.add_argument('--adversarial', action='store_true', help='Adversarial Denoising autoencoder')
