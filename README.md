@@ -18,8 +18,8 @@ If you find this code useful please cite us in your work:
 ```
 @article{jolicoeurpiche2020adversarial,
   title={Adversarial score matching and improved sampling for image generation},
-  author={xxxx},
-  journal={arXiv preprint arXiv:xxx},
+  author={Jolicoeur-Martineau, Alexia and Piché-Taillefer, Rémi and Mitliagkas, Ioannis and Tachet des Combes, Rémi},
+  journal={arXiv preprint arXiv:2009.05475},
   year={2020}
 }
 ```
