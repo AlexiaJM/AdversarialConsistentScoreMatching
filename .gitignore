@@ -1,0 +1,7 @@
+*.png
+*.gif
+*.pdf
+exp/
+.idea/
+__pycache__
+remi_beluga.sh

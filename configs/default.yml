@@ -1,0 +1,69 @@
+data:
+  dataset: LSUN
+  category: church_outdoor
+  image_size: 64
+  channels: 3
+  logit_transform: false
+  uniform_dequantization: false
+  gaussian_dequantization: false
+  random_flip: true
+  rescaled: false
+  num_workers: 32
+
+model:
+  sigma_begin: 140
+  num_classes: 788
+  ema: true
+  ema_rate: 0.999
+  spec_norm: false
+  sigma_dist: geometric
+  sigma_end: 0.01
+  normalization: InstanceNorm++
+  nonlinearity: elu
+  ngf: 128
+  unet: false
+  dropout: 0.0
+
+sampling:
+  noise_first: false
+  clamp: false
+
+training:
+  log_all_sigmas: true  # whether to send training information to tensorboard
+
+optim:
+  weight_decay: 0.000
+  optimizer: Adam
+  lr: 0.0001
+  beta1: 0.9
+  beta2: 0.999
+  adv_beta1: -0.5
+  adv_beta2: 0.9
+  amsgrad: false
+  eps: 0.00000001
+  momentum: 0.9
+
+fast_fid:
+  batch_size: 50
+  num_samples: 1000
+
+adversarial:
+  lambda_dae: 1           # multiplier term for Lp loss function (only used in GAN setting)
+  lambda_D: 1             # multiplier term for GAN loss of the discriminator'
+  lambda_G_gan: 1         # multiplier term for GAN loss of the generator
+  D_steps: 1              # Discriminator steps per Generator step
+  adv_loss: LSGAN         # 'GAN, LSGAN, HingeGAN, RpGAN, RaGAN, RaLSGAN, RaHingeGAN'
+  arch: 2                 # 0 is DCGAN_D0, 1 is DCGAN_D1, 2 is BigGAN
+  spectral: false         # If True, spectral normalization in D
+  no_batch_norm_D: false  # Not active in BigGAN
+  adv_clamp: true     # If True, do not clamp output of score network before giving to discriminator
+
+biggan:
+  ch: 64          # Number of channels
+  thin: false     # If True, use thin Discriminator (D_ch = 0 with D_thin = True leads to )
+  kernel_size: 3
+  attn: '64'       # Number of attention filters (If 0, do not use self-attention)
+  n_classes: 1    # Number of classes of the dataset (If = 1 leads to Unconditional GAN)  # inactive
+  init: xavier    # Type of init,: ortho, xavier, N02
+
+
