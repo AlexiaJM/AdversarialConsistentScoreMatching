@@ -37,6 +37,8 @@ def get_config(args):
     if args.D_adam:
         config.optim.adv_beta1 = args.D_adam_beta[0]
         config.optim.adv_beta2 = args.D_adam_beta[1]
+    if args.D_steps != 0:
+        config.adversarial.D_steps = args.D_steps
 
     return config
 
