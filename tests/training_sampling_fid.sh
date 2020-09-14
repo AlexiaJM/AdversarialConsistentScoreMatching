@@ -310,7 +310,7 @@ fid_num_samples='4000'
 step_lr='5.45e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
 # Step1: Train score network
-python main.py --train --config $config --doc $model --ni --adam --adam_beta 0 .9 --D_adam --D_adam_beta -.5 .9 --adversarial
+python main.py --train --config $config --doc $model --ni --adam --adam_beta 0 .9 --D_adam --D_adam_beta -.5 .9 --adversarial --D_steps 2
 # Step2: Skip - Using lr from non-adversarial model
 # Step3: Determine best checkpoint by using the Fast-FID from begin_ckpt to end_ckpt on consistent n_sigma=1
 python main.py --fast_fid --config $config --doc $model --ni --consistent --nsigma 1 --step_lr $step_lr --batch_size $batch_size --fid_num_samples $fid_num_samples --begin_ckpt $begin_ckpt --end_ckpt $end_ckpt
