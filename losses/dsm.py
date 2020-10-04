@@ -35,7 +35,7 @@ def anneal_dsm_score_estimation(args, scorenet, samples, sigmas, labels=None, ho
         if args.target == 'dae':
             fake_denoised_samples = scores
         elif args.target == 'gaussian':  # Default
-            fake_denoised_samples = scores * used_sigmas + samples
+            fake_denoised_samples = scores * used_sigmas + perturbed_samples
         else:
             raise NotImplementedError()
 
