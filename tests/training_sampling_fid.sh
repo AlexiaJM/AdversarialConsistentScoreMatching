@@ -53,8 +53,8 @@ config='cifar10_9999ema.yml'
 ckpt='250000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='4000' # As big as possible to fill your GPUs
-fid_num_samples='4000'
+batch_size='2500' # As big as possible to fill your GPUs
+fid_num_samples='5000'
 step_lr='5.6e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
 # Step1: Train score network
@@ -105,8 +105,8 @@ config='cifar10_9999ema.yml'
 ckpt='250000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='4000' # As big as possible to fill your GPUs
-fid_num_samples='4000'
+batch_size='2500' # As big as possible to fill your GPUs
+fid_num_samples='5000'
 step_lr='5.6e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
 # Step1: Train score network
@@ -153,7 +153,7 @@ config='church.yml'
 ckpt='180000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='2000' # As big as possible to fill your GPUs
+batch_size='1000' # As big as possible to fill your GPUs
 fid_num_samples='4000'
 step_lr='2.8e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
@@ -205,7 +205,7 @@ config='church.yml'
 ckpt='185000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='2000' # As big as possible to fill your GPUs
+batch_size='1000' # As big as possible to fill your GPUs
 fid_num_samples='4000'
 step_lr='2.8e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
@@ -253,8 +253,8 @@ config='cifar10_unet_9999_1e-4.yml'
 ckpt='260000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='4000' # As big as possible to fill your GPUs
-fid_num_samples='4000'
+batch_size='2500' # As big as possible to fill your GPUs
+fid_num_samples='5000'
 step_lr='5.45e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
 # Step1: Train score network
@@ -305,8 +305,8 @@ config='cifar10_unet_9999_1e-4.yml'
 ckpt='290000'
 begin_ckpt='100000'
 end_ckpt='300000'
-batch_size='4000' # As big as possible to fill your GPUs
-fid_num_samples='4000'
+batch_size='2500' # As big as possible to fill your GPUs
+fid_num_samples='5000'
 step_lr='5.45e-6' # Tune lr for consistent n_sigma=1 based on Fast-FID
 
 # Step1: Train score network
