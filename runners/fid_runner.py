@@ -35,14 +35,17 @@ class FidRunner(SampleRunner):
         for ckpt in tqdm.tqdm(range(self.config.fast_fid.begin_ckpt, self.config.fast_fid.end_ckpt + 1,
                                     self.config.training.snapshot_freq), desc="processing ckpt"):
 
-            score = self._load_states(score)
-            score.eval()
-            kwargs['scorenet'] = score
+            kwargs['scorenet'] = self._load_states(score)
+            kwargs['scorenet'].eval()
 
-            for k in range(self.config.fast_fid.num_samples // bs):
+            sizes = [bs] * self.config.fast_fid.num_samples // bs + [self.config.fast_fid.num_samples % bs]
+            if sizes[-1] == 0:
+                sizes.pop()
+
+            for k, bs_ in enumerate(sizes):
 
                 final_samples, final_samples_denoised = self.sample(dataloader, saveimages=(k == 0), kwargs=kwargs,
-                                                                    bs=bs, gridsize=100, ckpt_id=ckpt)
+                                                                    bs=bs_, gridsize=100, ckpt_id=ckpt)
 
                 sizes = [self.config.data.channels, self.config.data.image_size, self.config.data.image_size]
 

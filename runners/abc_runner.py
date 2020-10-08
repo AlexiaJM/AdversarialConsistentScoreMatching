@@ -115,6 +115,9 @@ class Runner(abc.ABC):
                 data_iter = iter(dataloader)
                 samples, _ = next(data_iter)
 
+            if bs is not None:
+                samples = samples[:bs]
+
             samples = samples.to(self.args.device)
             samples = data_transform(self.config.data, samples)
             init_samples = samples
