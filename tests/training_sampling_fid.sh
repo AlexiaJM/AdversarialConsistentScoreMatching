@@ -250,7 +250,7 @@ python main.py --sample --config $config --doc $model --ni --nsigma 5 --step_lr 
 
 model='cifar10_unet_bs128_L2_9999ema_lr1e-4'
 config='cifar10_unet_9999_1e-4.yml'
-ckpt='260000'
+ckpt='290000'
 begin_ckpt='100000'
 end_ckpt='300000'
 batch_size='2500' # As big as possible to fill your GPUs
@@ -302,7 +302,7 @@ python main.py --sample --config $config --doc $model --ni --nsigma 5 --step_lr 
 
 model='cifar10_unet_bs128_L2_adam0_9_adamD-5_9_LSGAN__Diter2'
 config='cifar10_unet_9999_1e-4.yml'
-ckpt='290000'
+ckpt='260000'
 begin_ckpt='100000'
 end_ckpt='300000'
 batch_size='2500' # As big as possible to fill your GPUs
