@@ -5,3 +5,4 @@ exp/
 .idea/
 __pycache__
 remi_beluga.sh
+DSM_ScoreNetwork_Pretrained.zip

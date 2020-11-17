@@ -20,9 +20,6 @@ def get_model(m_config, d_config, args):
                   'ngf': m_config.ngf}
         return UNet(**kwargs).to(args.device)
 
-    sigmoid = args.target == 'dae'
-    model_args = [m_config, d_config, sigmoid, args.no_dilation, args.std]
-
     if d_config.dataset == "FFHQ":
         model = NCSNv2Deepest
     elif d_config.dataset == 'LSUN':
@@ -30,6 +27,8 @@ def get_model(m_config, d_config, args):
     else:
         model = NCSNv2
 
+    sigmoid = args.target == 'dae'
+    model_args = [m_config, d_config, sigmoid, args.no_dilation, args.std]
     return model(*model_args).to(args.device)
 
 

@@ -38,7 +38,7 @@ class FidRunner(SampleRunner):
             kwargs['scorenet'] = self._load_states(score)
             kwargs['scorenet'].eval()
 
-            sizes = [bs] * self.config.fast_fid.num_samples // bs + [self.config.fast_fid.num_samples % bs]
+            sizes = [bs] * (self.config.fast_fid.num_samples // bs) + [self.config.fast_fid.num_samples % bs]
             if sizes[-1] == 0:
                 sizes.pop()
 
