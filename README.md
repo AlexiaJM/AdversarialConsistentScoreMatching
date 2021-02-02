@@ -1,6 +1,6 @@
 # Adversarial score matching and improved sampling for image generation
 
-This repo contains the official implementation for the paper [Adversarial score matching and improved sampling for image generation](https://arxiv.org/abs/2009.05475). It it a highly extended version of [the original repo on score matching](https://github.com/ermongroup/ncsnv2).
+This repo contains the official implementation for the ICLR 2021 paper [Adversarial score matching and improved sampling for image generation](https://arxiv.org/abs/2009.05475). It it a highly extended version of [the original repo on score matching](https://github.com/ermongroup/ncsnv2).
 
 Discussion and more samples at https://ajolicoeur.wordpress.com/adversarial-score-matching-and-consistent-sampling.
 
@@ -16,11 +16,13 @@ Discussion and more samples at https://ajolicoeur.wordpress.com/adversarial-scor
 
 If you find this code useful please cite us in your work:
 ```
-@article{jolicoeurpiche2020adversarial,
-  title={Adversarial score matching and improved sampling for image generation},
-  author={Jolicoeur-Martineau, Alexia and Piché-Taillefer, Rémi and Mitliagkas, Ioannis and Tachet des Combes, Rémi},
-  journal={arXiv preprint arXiv:2009.05475},
-  year={2020}
+@inproceedings{
+jolicoeur-martineau2021adversarial,
+title={Adversarial score matching and improved sampling for image generation},
+author={Alexia Jolicoeur-Martineau and R{\'e}mi Pich{\'e}-Taillefer and Ioannis Mitliagkas and Remi Tachet des Combes},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=eLfqMl3z3lq}
 }
 ```
 ## Setup
