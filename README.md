@@ -17,12 +17,12 @@ Discussion and more samples at https://ajolicoeur.wordpress.com/adversarial-scor
 If you find this code useful please cite us in your work:
 ```
 @inproceedings{
-jolicoeur-martineau2021adversarial,
-title={Adversarial score matching and improved sampling for image generation},
-author={Alexia Jolicoeur-Martineau and R{\'e}mi Pich{\'e}-Taillefer and Ioannis Mitliagkas and Remi Tachet des Combes},
-booktitle={International Conference on Learning Representations},
-year={2021},
-url={https://openreview.net/forum?id=eLfqMl3z3lq}
+  jolicoeur-martineau2021adversarial,
+  title={Adversarial score matching and improved sampling for image generation},
+  author={Alexia Jolicoeur-Martineau and R{\'e}mi Pich{\'e}-Taillefer and Ioannis Mitliagkas and Remi Tachet des Combes},
+  booktitle={International Conference on Learning Representations},
+  year={2021},
+  url={https://openreview.net/forum?id=eLfqMl3z3lq}
 }
 ```
 ## Setup
