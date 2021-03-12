@@ -56,7 +56,7 @@ adversarial:
   arch: 2                 # 0 is DCGAN_D0, 1 is DCGAN_D1, 2 is BigGAN
   spectral: false         # If True, spectral normalization in D
   no_batch_norm_D: false  # Not active in BigGAN
-  adv_clamp: true     # If True, do not clamp output of score network before giving to discriminator
+  adv_clamp: true     # If True, clamp output of score network before giving to discriminator
 
 biggan:
   ch: 64          # Number of channels
