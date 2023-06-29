@@ -31,8 +31,8 @@ If you find this code useful please cite us in your work:
 
 * see requirements.txt (or do 'pip install numpy==1.16.0 lmdb torch torchvision jupyter matplotlib scipy tensorflow_gpu==2.1.0 tqdm PyYAML tensorboardX seaborn pillow setuptools==41.6.0 opencv-python')
 * set your default directories in main.py and tests/training_sampling_fid.sh properly
-* To use our pre-trained score betworks, download them (https://www.dropbox.com/s/dltiobdlsb2vhyo/DSM_ScoreNetwork_Pretrained.zip?dl=0) and unzip to /exp
-* To calculate the FID, download the FID statistics (https://www.dropbox.com/s/nhvp2tf1unxj08g/fid_stats.zip?dl=0) and unzip to /exp/datasets
+* To use our pre-trained score betworks, download them (https://ln5.sync.com/dl/df5e312c0/krdqveya-prd8ur88-avv3sezg-x62ugj8f) and unzip to /exp
+* To calculate the FID, download the FID statistics (https://ln5.sync.com/dl/ea2f51340/mqjixbhz-dkirwhic-cagmbzsw-5z2dnvd3) and unzip to /exp/datasets
 
 **Hyperparameter choice**
 
@@ -76,12 +76,12 @@ FIDs will be saved in `{args.fid_folder}/log_FID.txt`.
 
 ## Pretrained Score Network Checkpoints
 
-Link: https://www.dropbox.com/s/dltiobdlsb2vhyo/DSM_ScoreNetwork_Pretrained.zip?dl=0
+Link: https://ln5.sync.com/dl/df5e312c0/krdqveya-prd8ur88-avv3sezg-x62ugj8f
 
 Download and unzip it to the exp folder.
 
 ## FID statistics (for FID evaluation)
 
-Link: https://www.dropbox.com/s/nhvp2tf1unxj08g/fid_stats.zip?dl=0
+Link: https://ln5.sync.com/dl/ea2f51340/mqjixbhz-dkirwhic-cagmbzsw-5z2dnvd3
 
 Download and unzip it to the exp/datasets folder.
